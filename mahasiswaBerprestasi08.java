@@ -18,7 +18,7 @@ public class mahasiswaBerprestasi08 {
         }
     }
 
-    // Bubble Sort - DESC berdasarkan IPK
+// Bubble Sort - DESC berdasarkan IPK
     void bubbleSort() {
         for (int i = 0; i < listMhs.length - 1; i++) {
             for (int j = 1; j < listMhs.length - i; j++) {
@@ -30,4 +30,20 @@ public class mahasiswaBerprestasi08 {
             }
         }
     }
+ 
+    // Selection Sort - ASC berdasarkan IPK
+    void selectionSort() {
+        for (int i = 0; i < listMhs.length - 1; i++) {
+            int idxMin = i;
+            for (int j = i + 1; j < listMhs.length; j++) {
+                if (listMhs[j].ipk < listMhs[idxMin].ipk) {
+                    idxMin = j;
+                }
+            }
+            mahasiswa08 tmp   = listMhs[idxMin];
+            listMhs[idxMin]   = listMhs[i];
+            listMhs[i]        = tmp;
+        } 
+    }
 }
+ 
