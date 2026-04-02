@@ -1,0 +1,33 @@
+public class mahasiswaBerprestasi08 {
+    mahasiswa08[] listMhs = new mahasiswa08[5];
+    int idx;
+
+    void tambah(mahasiswa08 m) {
+        if (idx < listMhs.length) {
+            listMhs[idx] = m;
+            idx++;
+        } else {
+            System.out.println("data sudah penuh");
+        }
+    }
+
+    void tampil() {
+        for (mahasiswa08 m : listMhs) {
+            m.tampilInformasi();
+            System.out.println("---------------------------");
+        }
+    }
+
+    // Bubble Sort - DESC berdasarkan IPK
+    void bubbleSort() {
+        for (int i = 0; i < listMhs.length - 1; i++) {
+            for (int j = 1; j < listMhs.length - i; j++) {
+                if (listMhs[j].ipk > listMhs[j - 1].ipk) {
+                    mahasiswa08 tmp = listMhs[j];
+                    listMhs[j]      = listMhs[j - 1];
+                    listMhs[j - 1]  = tmp;
+                }
+            }
+        }
+    }
+}
