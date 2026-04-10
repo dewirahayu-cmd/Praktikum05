@@ -2,9 +2,13 @@ import java.util.Scanner;
 public class mahasiswaDemo08 {
     public static void main(String[] args) {
         
-        mahasiswaBerprestasi08 list = new mahasiswaBerprestasi08();
+        // mahasiswaBerprestasi08 list = new mahasiswaBerprestasi08();
           Scanner sc = new Scanner(System.in);
-          int jumMhs = 5;
+        //   int jumMhs = 5;
+
+        System.out.print("Masukkan jumlah mahasiswa: ");
+        int jumMhs = Integer.parseInt(sc.nextLine());
+        mahasiswaBerprestasi08 list = new mahasiswaBerprestasi08(jumMhs);
 
         // mahasiswaBerprestasi08 list = new mahasiswaBerprestasi08();
         
