@@ -96,33 +96,44 @@ public class mahasiswaBerprestasi08 {
 
         void tampilDataSearch (double x, int pos) {
             if (pos != -1) {
-                System.out.println("nim/t : " + listMhs [pos].nim);
-                System.out.println("nama/t : " + listMhs [pos].nama);
-                System.out.println("kelas/t : " +listMhs [pos].kelas);
-                System.out.println("ipk/t : " +x);
+                System.out.println("nim\t : " + listMhs [pos].nim);
+                System.out.println("nama\t : " + listMhs [pos].nama);
+                System.out.println("kelas\t : " +listMhs [pos].kelas);
+                System.out.println("ipk\t : " +x);
             } 
             else {
-                System.out.println("Data mahasiswa dengan IPK " + x + "tidak ditemukkan");
+                System.out.println("Data mahasiswa dengan IPK " + x + " tidak ditemukkan");
             }
         }
 
-        int findBinarySearch(double cari, int left, int right){
-        int mid;
-        if (right >= left) {
-        mid = (left+right)/2;
-        if (cari == listMhs[mid].ipk){
-        return (mid);
+        // int findBinarySearch(double cari, int left, int right){
+        // int mid;
+        // if (right >= left) {
+        // mid = (left+right)/2;
+        
+        // if (cari == listMhs[mid].ipk){
+        //     return (mid);
+        // }
+        // else if (listMhs [mid].ipk > cari){
+        //     return findBinarySearch(cari, left, mid-1);
+        // }
+
+        // else {
+        //     return findBinarySearch(cari, mid+1, right);
+
+        int findBinarySearch(double cari, int left, int right) {
+    int mid;
+    if (right >= left) {
+        mid = (left + right) / 2;
+        if (cari == listMhs[mid].ipk) {
+            return mid;
+        } else if (listMhs[mid].ipk < cari) {
+            // data DESC yang lebih besar ada di kiri
+            return findBinarySearch(cari, left, mid - 1);
+        } else {
+            // data DESC yang lebih kecil ada di kanan
+            return findBinarySearch(cari, mid + 1, right);
         }
-
-        else if (listMhs [mid].ipk > cari){
-        return findBinarySearch(cari, left, mid-1);
-        }
-
-        else {
-        return findBinarySearch(cari, mid+1, right);
-
-        }
-
     }
     return -1;
 }
