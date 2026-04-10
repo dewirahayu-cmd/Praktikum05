@@ -64,7 +64,7 @@ public class mahasiswaDemo08 {
         System.out.println("------------------------------------------------");
         System.out.println("Pencarian data");
         System.out.println("------------------------------------------------");
-        System.out.print("masukkan ipk mahasiswa yang dicari: ");
+        System.out.println("masukkan ipk mahasiswa yang dicari: ");
         System.out.print("IPK: ");
         double cari = sc.nextDouble();
  
